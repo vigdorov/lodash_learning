@@ -16,4 +16,17 @@ const  diff = array.difference([1, 2, 3], [1], [3, 7, 8]);
 const diff2 = array.differenceBy([{x: '3'}, {x: '5'}, {x: '1'}], [{x: '5'}], (obj) => obj.x);
 const diff2_b = array.differenceBy([{x: '3'}, {x: '5'}, {x: '1'}], [{x: '5'}], 'x');
 
-console.log(diff2_b);
+// Удаляет N элементов в начале массива
+const drop = array.drop([2, 5, 45, 6, 2, 12], 3);
+
+// Удаляет N элементов с конца массива
+const dropRight = array.dropRight([1, 2, 3, 4], 2);
+
+// Удаляет с конца элементы до тех пор, пока обработка коллбек не вернет false
+const dropRightWhile = array.dropRightWhile([12, 5, 7, 2, -5], (n) => n < 3);
+
+// Тоже самое, но отбрасывает элементы с начала
+const dropWhile = array.dropWhile([1, 2, 3, 4, 5], n => n < 2);
+
+
+
