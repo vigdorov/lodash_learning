@@ -1,4 +1,6 @@
 import array from 'lodash/array';
+import {map} from 'lodash/collection';
+import {split, trim} from 'lodash/string';
 
 // Разделяет на массив на массивы с заданным размером, последний массив может быть меньшего размера
 const chunk = array.chunk([1, 34, 2, 234, 2, 234, 7], 2);
@@ -27,6 +29,15 @@ const dropRightWhile = array.dropRightWhile([12, 5, 7, 2, -5], (n) => n < 3);
 
 // Тоже самое, но отбрасывает элементы с начала
 const dropWhile = array.dropWhile([1, 2, 3, 4, 5], n => n < 2);
+
+const tagsString = '   sdf  , sd df sd   ,   sd  . sd  , sf_ 0f';
+const tagsArray  = split(tagsString, ',');
+const trimTagsArray = map(tagsArray, tag => {
+   const trimTag = trim(tag, ' ');
+   return trimTag;
+});
+
+
 
 
 
